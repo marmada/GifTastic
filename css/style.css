@@ -2,7 +2,12 @@
     float:left;
 }
 
-#foodButtons{
+.main{
 
     min-height: 20%;
+    margin-top: 20px;
+}
+
+.food{
+    margin: 5px;
 }

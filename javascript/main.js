@@ -1,17 +1,20 @@
-var foodArr = ["bbq", "french food", "beans", "mexican food", "pie", "cake", "chocolate", "steak", "pho", "paella"]
 
 
+var foodArr = ["bbq", "french food", "beans", "mexican food", "pie", "cake", "chocolate", "steak", "pho", "paella"];
 
-$(".food").on("click", function() {
+var foodQ= "";
 
-    var foodQ = this.attr("data-name");
+$("button").on("click", function() {
+
+    foodQ = $(this).attr("data-name");
 
     console.log(foodQ);
 
-    // Constructing a queryURL using the animal name
+
     var queryURL = "https://api.giphy.com/v1/gifs/search?&q=" 
     + foodQ + "api_key=hvnwkL6roszPGAdklacfXfRWFssZNqLM&limit=12&offset=0&rating=PG&lang=en";
-   
+
+    console.log(queryURL);
     // Performing an AJAX request with the queryURL
     $.ajax({
         url: queryURL,
@@ -47,9 +50,9 @@ $(".food").on("click", function() {
 
             
                 foodGiphy.attr("src", results[i].images.fixed_height_still.url);
-                foodGiphy.attr("data-state", "still")
+                foodGiphy.attr("data-state", "still");
                 foodGiphy.attr("data-still", results[i].images.fixed_height_still.url);
-                foodGiphy.attr("data-animate", results[i].images.fixed_width.url )
+                foodGiphy.attr("data-animate", results[i].images.fixed_width.url );
 
                 // add p & gif to div
                 foodDiv.append(p);

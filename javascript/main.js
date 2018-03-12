@@ -89,6 +89,7 @@ function createButtons() {
         b.addClass("foodQ");
 
         b.addClass("btn btn-info");
+        
         // Adding a data-attribute
         b.attr("data-name", foodArr[i]);
         // Add Value/Text

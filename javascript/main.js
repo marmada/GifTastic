@@ -104,13 +104,9 @@ $("#add-newFood").on("click", function (event) {
     event.preventDefault();
     // This line grabs the input from the textbox
     var food = $("#food-input").val().trim();
-
+    $("#food-input").empty();
     // Adding the movie from the textbox to our array
     foodArr.push(food);
-
-    $("#food-input").empty();
-
-
 
     // Calling renderButtons which handles the processing of our movie array
     createButtons();
